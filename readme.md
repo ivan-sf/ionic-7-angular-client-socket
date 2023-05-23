@@ -1,4 +1,3 @@
-```console
 # Proyecto de Ionic
 
 ## Descripción
