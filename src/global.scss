@@ -24,3 +24,22 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+@import "@webpixels/css/base";
+@import "@webpixels/css/forms";
+
+
+@import "@webpixels/css/base";
+@import "@webpixels/css/forms";
+
+// Load all the components
+@import "@webpixels/css/components";
+
+// Load only the components you use
+@import "@webpixels/css/components/alerts";
+@import "@webpixels/css/components/avatars";
+@import "@webpixels/css/components/buttons";
+@import "@webpixels/css/components/navbars";
+@import "@webpixels/css/components/cards";
+
+@import "@webpixels/css/utilities";
+@import "bootstrap/scss/utilities/api";
