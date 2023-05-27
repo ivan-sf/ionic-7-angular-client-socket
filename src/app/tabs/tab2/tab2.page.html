@@ -10,8 +10,8 @@
 
   <h1>Hi humans</h1>
 
-  <div style="width: 100%; height:40px; border:solid;" (click)="sendRequestPdf()">Enviar Solicitud PDF</div>
-  <div style="width: 100%; height:40px; border:solid;" (click)="sendRequestTxt()">Enviar Solicitud TXT</div>
-  <div style="width: 100%; height:40px; border:solid;" (click)="sendRequestCsv()">Enviar Solicitud CSV</div>
-
+  <div style="width: 100%; height:40px; border:solid;" (click)="sendRequest('e0113094-b138-4d19-8bb3-bee42745424e.pdf', '345', 'Explicame el documento en lenguaje NO tecnico', 'pdf')">Enviar Solicitud PDF</div>
+  <div style="width: 100%; height:40px; border:solid;" (click)="sendRequest('24cd1c0b-f6a6-45ca-bfc9-5b7896d203aa.txt', '345', 'Explicame el documento en lenguaje NO tecnico', 'txt')">Enviar Solicitud TXT</div>
+  <div style="width: 100%; height:40px; border:solid;" (click)="sendRequestCsv('0a1f404e-d049-4b47-b768-48c426d019cb.csv', '12',  'Explicame el documento en lenguaje NO tecnico')">Enviar Solicitud CSV</div>
+  
 </ion-content>

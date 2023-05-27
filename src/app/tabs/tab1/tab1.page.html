@@ -33,7 +33,7 @@
 		</div>
 		<div class="content">
 
-
+            
 
 			<div click="screen('search')" class="html search ">
 				<div class="title bounceInDown animated">Search Result</div>
@@ -42,6 +42,33 @@
 
       
 			<div class="html welcome visible">
+        
+        <div class="modal-login hidden-bottom" id="modal-login">
+          <div class="modal-card">
+            MODAL
+
+            
+          </div>
+        </div>
+
+				<div class="datetime">
+					<div class="day lightSpeedIn animated"></div>
+					<div class="date lightSpeedIn animated"></div>
+					<div class="time lightSpeedIn animated"></div>
+				</div>
+        <div class="buttons" id="card-buttons">
+          <div (click)="toggleModal()" class="button">
+            Inicia sesion
+          </div>
+  
+          <div class="button">
+            Registrarse
+          </div>
+        </div>
+
+			</div>
+
+      <div class="html home">
 				<div class="datetime">
 					<div class="day lightSpeedIn animated">Thursday</div>
 					<div class="date lightSpeedIn animated">June 18, 2015</div>
@@ -290,3 +317,36 @@
 </div>
 
 </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

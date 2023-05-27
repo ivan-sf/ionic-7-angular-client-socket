@@ -29,10 +29,15 @@ body {
     
     // background: url(https://raw.githubusercontent.com/khadkamhn/secret-project/master/img/background.jpg) center no-repeat;
     // background: url(https://images.unsplash.com/photo-1502318217862-aa4e294ba657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80) center no-repeat;
-    background: url(https://images.unsplash.com/photo-1564053051381-5cb91813736b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=610&q=80) center no-repeat;
+    // background: url(https://images.unsplash.com/photo-1564053051381-5cb91813736b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=610&q=80) center no-repeat;
+    background: url(https://images.unsplash.com/photo-1622189431943-f849d606f31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=327&q=80) center no-repeat;
+    // background: url(https://i.pinimg.com/564x/68/f3/85/68f3855156e1c1055ebaceed7aae97d2.jpg) center no-repeat;
+    // background: url(https://images.unsplash.com/photo-1579547944212-c4f4961a8dd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=339&q=80) center no-repeat;
+    
     background-size: cover;
-    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
   }
+  
   
   .mobile-wrap:before {
     top: 0;
@@ -42,7 +47,7 @@ body {
     content: '';
     position: absolute;
     background: rgba(90, 93, 165, .8);
-    background: linear-gradient(to bottom, rgba(90, 93, 165, 1), rgba(0, 0, 0, .7))
+    background: linear-gradient(to bottom, rgba(90, 93, 165, 1), rgba(0, 0, 0, .7));
   }
   
   .mobile {
@@ -954,3 +959,70 @@ body {
 //   .menu:hover{
 //     border: solid blue;
 //   }
+.buttons{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* border: solid; */
+    height: 50vh;
+    justify-content: end;
+    transition: 2s ease-out;
+    .button{
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 10px;
+        margin: 15px 0;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .button:hover{
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.39);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.2px);
+        -webkit-backdrop-filter: blur(7.2px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+
+.modal-login{
+    border: solid;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* From https://css.glass */
+    background: rgba(127, 25, 144, 0.39);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.2px);
+    -webkit-backdrop-filter: blur(7.2px);
+    border: 1px solid rgba(127, 25, 144, 0.3);
+    transition: 1s ease-in;
+}
+
+.hidden-bottom{
+    transform: translateY(100vh);
+}
+
+
+
+
+
+  svg{
+    height: 100%;
+    width: 100%;
+    
+  }

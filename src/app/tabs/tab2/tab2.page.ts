@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
- 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -8,78 +7,52 @@ import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 })
 export class Tab2Page {
 
-  answerPdfSocket$: WebSocketSubject<any>;
-  answerTxtSocket$: WebSocketSubject<any>;
-  answerCsvSocket$: WebSocketSubject<any>;
+  answerSocket$: WebSocketSubject<any>;
  
   constructor() {
-    this.answerPdfSocket$ = webSocket('ws://localhost:8000/ws/answer-pdf');
-    this.answerTxtSocket$ = webSocket('ws://localhost:8000/ws/answer-txt');
-    this.answerCsvSocket$ = webSocket('ws://localhost:8000/ws/answer-csv');
+    this.answerSocket$ = webSocket('ws://localhost:8000/ws/answer');
     this.loadSockets()
   }
 
   loadSockets(){
-    this.answerPdfSocket$.subscribe(
+    this.answerSocket$.subscribe(
       (response: any) => {
-        console.log('Respuesta recibida (answer-pdf):', response);
+        console.log('Respuesta recibida (answer):', response);
       },
       (error: any) => {
-        console.error('Error en la conexión WebSocket (answer-pdf):', error);
-      }
-    );
-
-    this.answerTxtSocket$.subscribe(
-      (response: any) => {
-        console.log('Respuesta recibida (answer-txt):', response);
-      },
-      (error: any) => {
-        console.error('Error en la conexión WebSocket (answer-txt):', error);
-      }
-    );
-
-    this.answerCsvSocket$.subscribe(
-      (response: any) => {
-        console.log('Respuesta recibida (answer-csv):', response);
-      },
-      (error: any) => {
-        console.error('Error en la conexión WebSocket (answer-csv):', error);
+        console.error('Error en la conexión WebSocket (answer):', error);
       }
     );
   }
- 
-  sendRequestPdf() {
-    console.log('esperando respuesta')
+
+  
+  
+  sendRequest(file:string, user:string, query:string, type:string) {
+    console.log('esperando respuesta', type)
     const request = {
-      user_id: '345',
-      file_name: 'e0113094-b138-4d19-8bb3-bee42745424e.pdf',
-      query: 'De que trata el documento?'
+      file_name: file,
+      user_id: user,
+      query: query,
+      type: type
     };
 
-    this.answerPdfSocket$.next(request);
+    this.answerSocket$.next(request);
   }
 
-  sendRequestTxt() {
+
+  sendRequestCsv(file:string,user:string,query:string) {
     console.log('esperando respuesta')
     const request = {
-      user_id: '345',
-      file_name: '24cd1c0b-f6a6-45ca-bfc9-5b7896d203aa.txt',
-      query: 'De que trata el archivo de texto?'
+      query: {
+        question: query
+      },
+      user_id: user,
+      file_name: file,
+      type: 'csv'
     };
 
-    this.answerTxtSocket$.next(request);
+    this.answerSocket$.next(request);
   }
 
-  sendRequestCsv() {
-    console.log('esperando respuesta')
-    const request = {
-      user_id: '345',
-      file_name: '0016eb4e-c591-4e43-8f8c-d5a8d096b539.csv',
-      questions: ['¿Cuál es el valor de la columna "Nombre" en la fila 2?', '¿Cuántas filas tiene el archivo?']
-    };
 
-    this.answerCsvSocket$.next(request);
-  }
-
- 
 }

@@ -8,6 +8,7 @@ import { Apollo, gql } from 'apollo-angular';
 })
 export class Tab1Page {
   users:any
+
   constructor(
     private apollo: Apollo
   ) {
@@ -272,6 +273,11 @@ export class Tab1Page {
         this.title(item.textContent || "");
       });
     });
+  }
+
+  toggleModal(){
+    document.getElementById('modal-login')?.classList.toggle('hidden-bottom')
+    document.getElementById('card-buttons')?.classList.toggle('hidden-bottom')
   }
   
 
